@@ -28,9 +28,9 @@ Sample Combined Bar Graph:
 ![alt text](https://github.com/edmorado/emapvisualizer/raw/master/BarAll.png)
 
 **Optional Arguments / Customizations**
-'''
+
+'''bash
   -h, --help            show this help message and exit
-  
   -a N, --annot N       Only output the corresponding annotations:
                         1 == Biological process only
                         2 == Cellular component only
