@@ -29,7 +29,7 @@ Sample Combined Bar Graph:
 
 **Optional Arguments / Customizations**
 
-'''bash
+```bash
   -h, --help            show this help message and exit
   -a N, --annot N       Only output the corresponding annotations:
                         1 == Biological process only
@@ -53,4 +53,4 @@ Sample Combined Bar Graph:
                         RdYlGn (Default)
   -l N, --level N       Gene onthology level
   -b N, --barall N      Creates the bar  
-'''
+```
