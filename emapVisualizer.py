@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import argparse
 from argparse import RawTextHelpFormatter
@@ -63,16 +63,16 @@ def createBar(domain,annotData,numElem,cols):
 	#ADD INFO FOR GRAPH ELEMENTS
 	if domain == 1:
 		title = "Biological Process"
-	elif domain == 2:	
+	elif domain == 2:
 		title = "Cellular Component"
-	else:	
+	else:
 		title = "Molecular Function"
 
 	outfilename = title.replace(" ","_") + "_Bar.png"
 	cmap = plt.get_cmap(cols)
 	colors = cmap(np.arange(numElem)*12)
 
-	#POPULATE DATA	
+	#POPULATE DATA
 	counts = []
 	annots = []
 
@@ -142,7 +142,7 @@ def createPie(domain,annotData,numElem,cols):
 
 def createBarall(bps,ccs,mfs,numElem,cols):
 	#ADD INFO FOR GRAPH ELEMENTS
-	outfilename = "BarAll.png"		
+	outfilename = "BarAll.png"
 	title = "Top 20 Annotations for Each Domain"
 	cmap = plt.get_cmap(cols)
 	color1 = cmap(.1)
@@ -157,16 +157,16 @@ def createBarall(bps,ccs,mfs,numElem,cols):
 	for color in colorGet:
 		i = 0
 		while i < 20:
-			colors.append(color)	
+			colors.append(color)
 			i += 1
-	
+
 	#POPULATE DATA
 	counts = []
 	annots = []
 
 	bps = bps[:numElem]
 	ccs = ccs[:numElem]
-	mfs = mfs[:numElem]	
+	mfs = mfs[:numElem]
 
 	annotData = bps + ccs + mfs
 
@@ -174,12 +174,12 @@ def createBarall(bps,ccs,mfs,numElem,cols):
 		count = elem[0]
 		annot = elem[1]
 		counts.append(count)
-		annots.append(annot)	
-	
+		annots.append(annot)
+
 	y_pos = np.arange(len(annots))
 
 	#GENERATE GRAPH AND GRAPH ELEMENTS
- 	fig = plt.figure(figsize=(20, 10))
+	fig = plt.figure(figsize=(20, 10))
 	plt.bar(y_pos, counts, align="center", alpha=0.5, color=colors, edgecolor="black")
 	plt.xticks(y_pos, annots, rotation=45, ha="right", va="top")
 	plt.subplots_adjust(left=None, bottom=.35, right=None, top=None, wspace=None, hspace=None    )
@@ -209,7 +209,7 @@ for line in infile:
 		if parent == "molecular_function":
 			mfs.append([numGenes,annotation])
 
-bps = sorted(bps, reverse=True)	
+bps = sorted(bps, reverse=True)
 ccs = sorted(ccs, reverse=True)
 mfs = sorted(mfs, reverse=True)
 
@@ -260,7 +260,7 @@ elif graph == 3:
 		createPie(1,bps,top,colsch)
 	if ccp == 1:
 		createBar(2,ccs,top,colsch)
-		createPie(2,ccs,top,colsch)	
+		createPie(2,ccs,top,colsch)
 	if mfp == 1:
 		createBar(3,mfs,top,colsch)
 		createPie(3,mfs,top,colsch)
@@ -270,6 +270,3 @@ if barall == 1:
 	createBarall(bps,ccs,mfs,top,colsch)
 else:
 	pass
-
-
-
