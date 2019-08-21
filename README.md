@@ -27,9 +27,18 @@ Sample Pie Graph:
 Sample Combined Bar Graph:
 ![alt text](https://github.com/edmorado/emapvisualizer/raw/master/BarAll.png)
 
-**Optional Arguments / Customizations**
+**Basic Usage**
 
 ```
+usage: emapVisualizer.py [-h] [-a N] [-g N] [-t NN] [-c code] [-l N] [-b N]
+                         inputFile
+
+Creates a bar and/or pie graph for the top X percent of the output of Emap
+
+positional arguments:
+  inputFile             Input, output of Emap (which has a file extension of csv but actually is a tsv)
+
+optional arguments:
   -h, --help            show this help message and exit
   -a N, --annot N       Only output the corresponding annotations:
                         1 == Biological process only
@@ -53,4 +62,15 @@ Sample Combined Bar Graph:
                         RdYlGn (Default)
   -l N, --level N       Gene onthology level
   -b N, --barall N      Creates the bar  
+
 ```
+
+**Customizations**
+
+
+
+
+For more color maps, please visit matplotlib's colormap tutorial:
+https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
+
+
