@@ -68,13 +68,10 @@ optional arguments:
 **Customizations**
 
 You can change the color schemes of the graphs by using the -c option.
-The aesthetic feel of the 
+The aesthetic feel of presenting data is very important specially for poster presentations and creating reports.
 
+For more color maps, please visit matplotlib's colormap page:
+https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
 
 ![alt text](https://github.com/edmorado/emapvisualizer/raw/master/Biological_Process_Pie_2.png)
 ![alt text](https://github.com/edmorado/emapvisualizer/raw/master/Biological_Process_Pie_3.png)
-
-For more color maps, please visit matplotlib's colormap tutorial:
-https://matplotlib.org/3.1.0/tutorials/colors/colormaps.html
-
-
